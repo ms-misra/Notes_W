@@ -1,0 +1,25 @@
+AIM= To learn more about HTML
+
+Course Name = Introduction to HTML
+
+Course Specialization= Web Design for Everybody(Basics of Web Development and Coding) 
+
+Medium= Coursera					
+
+End Date= January 24,2019
+
+Notes=>
+
+<em> tag makes the text tilted
+
+Special Characters (called HTML Entities)
+< = &lt;
+> = &gt;
+& = &amp;
+arrows =  &larr; &darr; &uarr; &uarr;
+cards = &spades; &hearts; &diams; &clubs;
+
+<table> makes table 
+<tr> table row 
+<th> table header
+<td> table data

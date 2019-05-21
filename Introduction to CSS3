@@ -1,0 +1,121 @@
+AIM= To learn more about CSS
+
+Course Name = Introduction to CSS3
+
+Course Specialization= Web Design for Everybody(Basics of Web Development and Coding) 
+
+Medium= Coursera					
+
+Start Date= May 17,2019
+
+End Date = May 20, 2020
+
+Notes=>
+--------------------------------------------WEEK 1------------------------------------------------------
+
+Sans font has letter with curved endings like in calligraphy.
+Sans-Serif has letter with no curved edges , they are plain.
+
+font-style: normal, italic, oblique;
+
+font-variant: normal, small-caps;
+
+font-size: xx-small, x-small, small, smaller,
+			medium,
+			large, x-large, xx-large, larger,
+			(pixels), percentage;
+
+text-align: left, right, center, justify; 
+
+line-height: (percentage);
+
+display : inline, block , inline-block, none , table(table-cell), grid flexbox ;
+
+visibility : visible, hidden , collapse(only for table elements);
+
+float: left, right ;
+
+clear: left, right , both;
+
+overflow : hidden, scroll, auto, visible; 
+
+
+
+--------------------------------------------WEEK 2--------------------------------------------------------
+
+display property lets u decide how many elements u can fix in a line
+	values = {inline, block, inline-block, none}
+		none makes the element disappear
+
+we can use display values such as table and table cell
+
+Float property posititons the element as far as they can be and clears up its previous place
+
+Overflow property is used when the text dosent fit in the element
+	values = {visisble, hidden, scroll, auto}
+
+Border property should have border style(compulsory)
+	style = {none, dotted, dashed, solid, double, groove, ridge, inset, outset, hidden}
+	width = set in pixels or thin, medium, or large
+
+border-width: can have 1, 2, 3 or 4(clockwise) values 
+
+margin is the space outside your border( between u and neighbouring element)
+
+padding is addititonal space between the element and its border
+
+the lowest to highest ==> element text, padding , border, margin
+
+Links have states-
+	a:link = a normal, unvisisted link
+	a:visited = has been visited
+	a:hover = activated by mouse (MUST come after a:link and a:visited)
+	a:focus = activated with the keyborad
+	a:active = is being clicked (MUST come after a:hover)
+
+Styling lists has properties 
+	list-style-type = values{lower-roman,upper-roman, decimal, decimal-leading-zero, upper-aplha, lower-aplha, hebrew, armenian .....}
+	list-style-img = can be any image
+		values = {first_value= square,circle,discs    second_value= url('name_of_img')}
+
+CSS selectors
+	nav a = (every a tag in nav)
+	nav > a = (every a tag which is direct child of nav(comes directly under nav)) 
+	hl + ol = (same level and follow each other)
+
+	Operators
+		a[href^='https'] = (^) matches the beginning exactly
+		$ = matches the end exactly
+		* = anywhere
+
+Prefixes  (www.caniuse) makes the code compatible with many browsers
+
+--------------------------------------------------Week 3--------------------------------------------------
+
+Transititons are used to add animations to your page.
+	
+Transition Properties =
+	transition-property = properties u want to change 
+	transition-duration 
+	transition-delay = times after which transition starts
+	transition-timing-function
+
+Transforms are like transitions but they can change element in 2d and 3d 
+as well
+
+transform:translate(x,y) = moves element x,y pixels (according to catesian)
+		 :rotate(xdeg) = always put deg
+		 :scale(width,height)= 
+		 :skew(xdeg,ydeg)
+		 :matrix()
+
+		 :rotate(x,y,z) 
+		 :rotateX()
+		 :rotateY()
+		 :rotateZ()
+
+Position = values {static, relative, absolute, fixed}
+	fixed is used for elements that have to be fixed on screen and will be there even if u scroll.
+
+-----------------------------------------------------Week 4---------------------------------------------------- 
+

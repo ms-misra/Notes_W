@@ -1,0 +1,62 @@
+php tag -- 
+	<?php
+
+	blah; 
+	blah; 
+
+	?>
+
+=> the <pre> tag in html displays the text as it is written in the editor (with all the white places involved)
+
+=> All variables start with a dollar $ sign.
+
+=> to conatenate strings, we use "."
+
+=> \n spans a new line
+
+Strings can be shown by both single and double quotes
+
+But \n dosent work in single quotes and also variables with dollar sign dont expand in single quotes.
+( In single quotes variable are shown with dollar sign and vlaue is shown in double quotes)
+
+you can concatenate a single quotes string and a double quotes string 
+
+Comments : 
+	single lne = //jfhkfhw , #akdjakldj
+	Documenation = /*  rwrwofjw
+	wkfjwlf */
+
+Display statements :
+	echo : can accept multiple parameters with braces
+	print : can have only on parameter
+
+we can add integers as ell as floating point numbers together
+we can even add words to numbers and the value of names is 0
+
+if boolean number is added to integer , true converts to 1 and false converts to nothing
+--------------------------------------------------------------------------------------------------------------
+ 								ARRAYS
+
+arrays can also have key-value pair and elements can also be indexed. 
+
+map to operator (=>)
+
+we can print tags using echo, eg
+	echo(" <pre>");
+	echo("</pre>");
+
+we can print arrays using 
+	print_r() -> it doesnt show print (used for debug printing)
+	var_dump() -> it is more precise ( it can print false also) provide more info
+
+we can create an empty array using $var = array();
+
+looping in an array 
+	foreach( $var as $key => $val) {
+	}
+
+count() gives the number of keys in array
+
+explode("p", $arrray) = p is the parameter on which the string is split, and the parts 
+are made elements of array.
+

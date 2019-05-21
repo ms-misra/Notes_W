@@ -1,0 +1,19 @@
+Terminolgy:-
+	relation or tables 
+	tuple or row
+	attribute or column
+
+DDL(Data Definition)
+	Create
+
+Data Manipulation Language
+	insert
+	select
+	update
+	delete
+
+Limit func limits the number of rows in a query
+Count func gives count of rows
+Distinct func gives the count of unique values in a column
+
+% = wildcard character
