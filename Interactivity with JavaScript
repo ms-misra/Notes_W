@@ -1,0 +1,119 @@
+AIM= To learn more about JavaScript
+
+Course Name = Interactivity with JavaScript
+
+Course Specialization= Web Design for Everybody(Basics of Web Development and Coding) 
+
+Medium= Coursera					
+
+Start Date= May 21,2019
+
+End Date = May 26, 2019
+
+Notes=>
+-----------------------------------------------Week 1----------------------------------------------------------
+JavaSript doesnt have print function
+
+Data is displayed on the screen by
+	an alert box using window.alert() --gives a pop-up with ok button 
+	a prompt using window.prompt() ---- gives a pop-up with an input field
+	HTML ouput using document.write() --- writes directly to the screen
+	HTML element using innerHTML() --- replaces the content of the DOM (No parenthesis)
+	the browser console using comsole.log()------used in debugging
+
+alert("Message") gives a pop-up window
+
+<script> tag is used to write JS in HTML file
+
+a variable is declared by prefixing it with "var" (variables are case-sensitive) 
+
+Datatypes => 
+	Numerical values
+	String (value is put in quotes)Boolean (trues/false)(without quotes)
+	Object (they have attributes)
+	Array  
+
+Equality (==)
+Equality with type (===)
+And (&&)
+Or (||)
+
+-------------------------------------------------Week 2----------------------------------------------------------
+
+Functions start with the keyword "function" 
+
+Functions can be declared inside the head tag 
+
+Events -
+	onclick =
+	onload = when the page gets loaded
+	onresize = 
+	onmouseover = 
+	onchange = 
+
+to change the style of an element we do =  element.style.color="blue";
+
+"this" keyword is used to reference the current element
+
+-------------------------------------------------Week 3 ----------------------------------------------------
+
+Arrays ---
+
+Ways of declaring array-
+	var grades=[80.97,65,43];
+	var foods= ['bananas','apples','pizza'];
+	var images=document.getElementsByClassName['imgs'];
+	var listItems= document.getElementsByTagName['li'];
+
+elements in array can be of different type
+
+we can add elements in array by using push()
+
+Loop syntax is same as in C
+
+------------------------------Week 4-----------------------------------
+
+Forms - 
+	Tags used --
+		<form> tells the browser its a form.
+		<label>matches different text on the screen with the actual input that u put in
+		<input>(most imp)
+
+Attributes--
+	type = {
+		text = text boxes
+		radio = radio buttons( can select only one) 
+		submit = submit buttons(can  select many)
+
+	value = default values put in text boxes
+
+	marked = default values checked in radio buttons
+
+	target = to open link{
+		_self = default value, same tab
+		_blank= different tab
+
+	action = any action to be performed, destinstion url to send form 
+
+	checked = {true,false} (for default value in checkboxes and radio-buttons )
+
+	method = {get, post}
+		get = (default),shows data in the url, for bookmarking the form, url limit 3000
+		post = for sensitive info, no size limit, can send large data
+
+	name = most imp, acts as id/class, if omitted cant send data to server
+
+Ways to Validate = 
+	HTML5 input types = brower validates, focuses first values to validate, may not be supported by browser
+	HTML5 attributes = {
+		required = always have to be filled
+		novalidate = ignore all other attributes (for testing)
+		pattern =  works only with [input=test], use [html5pattern.com] for this(better)
+	}
+	Javascript funtions
+
+to compare only the particualar values of an element use element.value
+
+putting <label> tag on checkboxes lets u check the box by clicking on the text also
+
+<fieldset> tag makes an outline on the whole element and using <legend> tag with in will put the text in between the outline

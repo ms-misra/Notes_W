@@ -117,5 +117,4 @@ transform:translate(x,y) = moves element x,y pixels (according to catesian)
 Position = values {static, relative, absolute, fixed}
 	fixed is used for elements that have to be fixed on screen and will be there even if u scroll.
 
------------------------------------------------------Week 4---------------------------------------------------- 
-
+-----------------------------------------------------Week 4------------------------------------------------------
