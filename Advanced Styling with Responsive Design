@@ -1,0 +1,123 @@
+AIM= To learn more about Responsiveness of a Site
+
+Course Name = Advanced Styling woth Responsive Design
+
+Course Specialization= Web Design for Everybody(Basics of Web Development and Coding) 
+
+Medium= Coursera	
+
+Start Date= May 27,2019
+
+End Date = June 2, 2019
+
+Notes=>
+-----------------------------------------------Week 1----------------------------------------------------------
+
+Responsive design means whether the site will look good on devices with diffrent screen sizes
+
+Responsiveness can be employed using ----
+	RWD (Responsive Web Design) = (Best), return the same page with little modifications,(return same code), same url
+	Adaptive Web Design = return differnt versions of pages for different browsers,(different code), same url
+	Separate Mobile Site(.m) = Separate page url for mobile site, different code and different urls
+
+Pixels = they remain same across all devices and screens
+
+em = sizes an element relative to its parent element
+
+rem = sizes an element relative  to the HTML(root element) font size
+
+ADVICE => Font Size Idea: % at the Root, rem for Components, em for Text Elements 
+
+Absolute measurements = {
+	px =(pixel) 1/96 of inch
+
+	mm = millimeter
+	cm = centimeter
+	in = inch
+
+	pt = (point) 1/72 of inch
+	pc = (pica) 12 points
+}
+Relative measurements = {
+	% = relative to font size (in pixels) of parent element
+
+	em = { 1em = 16px = 12pt = 100%} 
+
+	rem = 
+
+	vw = (viewport width) 1/100 of width of viewport
+
+	vh = (viewport height) 1/100 of height of viewport
+}
+
+----------------------------------------------Week 2-----------------------------------------------
+
+Media queries consist of two elements - media type and query
+
+implementing media queries
+	to import media queries -
+		@import url(stylesheet.css) screen and (min-width:600px)
+
+	putting in style sheet
+		@media screen and (min_width:500px){...}
+
+	by linking
+	<link rel="stylesheet" media= "screen and (min-width:400px)" and (orientation:potrait)>
+
+<meta name = 'viewport' content='width=device-width, initial-scale=1'>
+
+padding and margin is affected by width and not by height
+
+In media queries, lways start with the smallest sizes first.
+
+Doesnt allows the user to zoom in or zoom out on the page--
+	<meta name = ‘viewport’ content=‘width=device-width, initial-scale=1, maximum-scale = 1’>
+
+-----------------------------------------------Week 3------------------------------------------------
+
+Popular Frameworks = 
+	Bootstrap 
+	Foundation by ZURB
+	Semantic UI
+	Pure by Yahoo
+	Ulkit by YOOtheme
+
+container class
+	.container has different widths for different types of devices.(gives 15px padding from both sides)
+	.container-fluid expands to fit the width of the device.
+
+Sizes --
+	xs = extra small (480px)
+	sm = small (768px)
+	md = medium (992px)
+	lg = large (1200px)
+
+if we specify something for small, then it will be their for medium and large also .Only if we specify the size , then it will override the default.
+
+Bootstrap code (needed)--
+	<div class="container">
+  		<div class="row">
+    		<div class="col-xs-*">
+
+------------------------------------------------Week 4---------------------------------------------
+
+Classes in Bootstrap used for image responsiveness
+	img-responsive
+	img-rounded = gives border radius to imges to give them a curved look.
+	img-circle = it cuts off the corners and oly shows a circular photo
+	img-thumbnail
+
+table classes --
+	.table =
+	.table-striped = 
+	.table-bordered = 
+	.table-hower =
+
+table-responsive class at the parent div makes the table more responsive (gets a scroll at the bottom of the table)
+
+element classes = 
+	warning, active, danger, success, info
+
+
+ADVICE = Always sketch the layout(wireframe) of your website first and then try to improve on it later. 
+
