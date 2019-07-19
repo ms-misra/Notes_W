@@ -1,0 +1,3 @@
+When a transaction is encrypted by private key, it can only be decrypted by public key and vice versa.
+
+

@@ -1,0 +1,26 @@
+Aim => To know about Dockers and Containers and Virtualization.
+
+Course Name => Getting Started with Google Kubernetes Engine
+
+Platform => Coursera
+
+Start Date => 3rd July, 2019
+
+End Date => 
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+ software containers enable you to break up your application into modules and roll them out from development to staging to production, with little or no care for what's inside or what infrastructure they're deployed on
+
+ Containers have no dependency on Kernel (OS) and the hardware
+ 
+ Containers are a way of isolating programs or processes from each other. The primary aim of containers is to make programs easy to deploy in a way that doesn't cause them to break.
+
+ Kubernetes is a container orchestration system. It adds the ability to define how many machines to run , how many containers to deploy, how to scale them, where persistent disks reside, and how to deploy a group of containers as a unit.
+
+ Labels are metadata you can assign to any API object and represent identity
+
+ 1=pods
+ 2=kublet,API, replicaset
+ 3=unique selctor,stopr running,random 
+

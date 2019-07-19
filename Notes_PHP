@@ -1,3 +1,17 @@
+Course Name = Building Web Applications in PHP
+
+Specialization = Web Applications for Everybody
+
+Lecturer = Charles Severance
+
+Medium = Coursera
+
+Start Date = ?
+
+End Date =
+
+Notes--
+---------------------------------------------------Week 5----------------------------------------------
 php tag -- 
 	<?php
 
@@ -8,51 +22,69 @@ php tag --
 
 => the <pre> tag in html displays the text as it is written in the editor (with all the white places involved)
 
-=> All variables start with a dollar $ sign.
+=> All variables start with a dollar $ sign. Case matters in variable names
 
-=> to conatenate strings, we use "."
+to conatenate strings, we use "."
 
-=> \n spans a new line
+\ is used as escape character
+
+\n spans a new line(works in double quotes)
 
 Strings can be shown by both single and double quotes
 
-But \n dosent work in single quotes and also variables with dollar sign dont expand in single quotes.
-( In single quotes variable are shown with dollar sign and vlaue is shown in double quotes)
+But \n doesnt work in single quotes and also variables with dollar sign dont expand in single quotes.
+(Expanding of a variable means that it is replaced by its value in the output)
+( In single quotes variable are shown with dollar sign and value is shown in double quotes)
 
 you can concatenate a single quotes string and a double quotes string 
 
 Comments : 
 	single lne = //jfhkfhw , #akdjakldj
 	Documenation = /*  rwrwofjw
-	wkfjwlf */
+						wkfjwlf */
 
 Display statements :
-	echo : can accept multiple parameters with braces
-	print : can have only on parameter
+	echo : can accept multiple parameters without braces
+	print : can have only one parameter, braces are optional
 
-we can add integers as ell as floating point numbers together
-we can even add words to numbers and the value of names is 0
+Identity operators : === , !== (doesnt type convert before comparing)
+Equality operators : == , != (type converts and then compares)
 
-if boolean number is added to integer , true converts to 1 and false converts to nothing
---------------------------------------------------------------------------------------------------------------
+Example =>	$x=12
+			$y=15 + $x++
+			echo "x is $x and y is $y"  =>  x is 13 and y=27
+
+
+we can add integers as well as floating point numbers together
+we can even add words to numbers and the value of words is 0
+
+if boolean number is added to integer , true converts to 1 and false converts to nothing(not even zero)
+
+strpos function finds the position in a string
+
+-----------------------------------------Week 6---------------------------------------------------------
  								ARRAYS
 
 arrays can also have key-value pair and elements can also be indexed. 
 
 map to operator (=>)
 
+array() id used as a constructor for arrays 
+
 we can print tags using echo, eg
 	echo(" <pre>");
 	echo("</pre>");
 
 we can print arrays using 
-	print_r() -> it doesnt show print (used for debug printing)
-	var_dump() -> it is more precise ( it can print false also) provide more info
+	print_r() -> it doesnt show print and prints the result structure wise (used for debug printing)
+	var_dump() -> it is more precise, ( it can print value false also), provide more info
 
 we can create an empty array using $var = array();
 
-looping in an array 
+looping in an array --
 	foreach( $var as $key => $val) {
+	}
+	for($i, $i<count($arr),$i++) {
 	}
 
 count() gives the number of keys in array
@@ -60,3 +92,101 @@ count() gives the number of keys in array
 explode("p", $arrray) = p is the parameter on which the string is split, and the parts 
 are made elements of array.
 
+$ans = $arr['key'] ?? 'not found' ; => this statement checks whether the given key is present in the array or not
+
+sort function sorts the array accorfing to index value and replaces the key with index( we can use ksort to sort by keys, and asort to sort by values)
+
+if we put parameters (if >1 then separated by &) on the end of URL, after the question mark (?) , they are parsed and placed in super global array ($_GET) [ ? for first parameter and & for second one]
+
+command to run localtunnel = lt-win -p 80
+
+command to run ngrok = ngrok http 80
+
+----------------------------------------Week 7-------------------------------------------------------------
+
+To declare a function we use the keyword 'function'
+
+We can add a value in the parameter of a function to make it the default value
+
+By default Php uses call by value for variables but we can use call by reference by adding a '&' symbol at the front of the parameter in function.
+
+We can use 'global' to reference a global variable  
+
+include "filename.php" = pulls the file in here , if not found - non fatal
+require "filename.php" =(            same                     )- fatal
+
+include_once "file.php" = checks if already included, if hasnt them only pulls the file
+require_once  
+
+-----------------------------------------Week 8---FORMS---------------------------------------------------
+
+Syntax of form to send via GET =>
+		<form>					
+			<p><label for="guess">Input Guess</label>
+			<input type="text" game="guess" id="guess"/></p>
+			<input type="submit"/>
+		</form>
+
+We use form with GET request to submit data along with the URL
+
+Syntax of form to send data via POST =>
+	<form method="post">
+		(SAME)
+	</form>
+
+When we use Post method , data doesnt go through the URL , parameters are appended to the request in the HTTP connection and also it goes to $_POST super global array.
+
+Post is used when data is being created or modified and Get is used when u reading or searching things.
+
+Get has a limit to parameters
+
+$_REQUEST is a merger of $_GET, $_POST and $_COOKIE (all global array)
+
+Input Tag =>
+	type = 	"text" --> for normal text
+			"passowrd" --> for passowrds
+			"radio" --> radio buttons (for selecting only one value) (We associate two radio buttons by 		giving them the same name)
+			"checkbox" --> (for selecting many at a time), (name are different and give key to value)
+					(default value on) (we use checked attribute to set default value)
+			"submit"-->for submit button , can have name="" --> (same) and value="" --> works as Text 			shown on button 
+			"button" --> for performing JS, uses value attribute (for making anchor tags as buttons)
+						(use onclick="location.href='url'; return false;")
+
+			"color" --> to select a color , uses hex number as default value for value=""
+			"date" --> to select date, uses a date in default value in value=""
+			"email" --> to submit email , (has validation)
+			"number" --> uses min="" and max="" attributes to set range (has validation)
+ 			"url" --> to type url , (has validation)
+ 			"file" --> lets you browse a file from PC
+ 			"flying" --> browser dosent understand ,so anything can ne submitted
+
+	name = "" --> key values pairs ie keys of values sent/typed.
+
+	id = "" --> should be same as <label for="">
+
+	value = "" -->to thing we and server see and stores (also used to set default values)
+
+Select Tag (for dropdowns ) (we use selected attribute to show default value)=>
+	name = "" --> (same)
+	id = "" --> (same) 
+	<option value=""> --> for diff options in dropdown
+	multiple="multiple" --> for multiple select dropdown type , uses array in name (name="example[]") 
+
+Textarea Tag (for writing paragraphs) => (does not use a value attribute to send value)
+	name ="" --> same
+	id ="" --> same 
+	rows ="" --> no of rows block will occupy
+	columns ="" --> no of columns block will occupy 
+
+<?php echo($oldguess); ?> can br written in short like <?= $oldguess ?>
+
+Html injection is putting a certain value in value="" which can break the code
+	Solution => use htmlentities() --> it converts all the double quotes and > , < , / signs to html entities 
+
+Model View Controller =
+	Model => the php files that do all the data processing work (usually at the top of code)
+	View => All the HTML and other stuff which th users sees (after model)
+	Controller => it is the whole script (it decides when to update the model )
+
+Header function is used to redirect the browser to a different page.
+Syntax => header("Location: page_name.php");

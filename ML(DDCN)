@@ -1,0 +1,78 @@
+perceptron is the main unit of ML(Simplest feedforward of Neural Network), Smallest block of NN
+
+Conventional Image Processing -> Machine Learning ->  Deep Learning
+
+Sound ()Voice Recognition # 
+Text  Classifying Review
+Images Image Processing #
+Time Series (Sensor Data, Web Activity)
+Videos (Motion DEtection) 
+
+Data Types = Ordinal , Interval , Ratio
+
+Data Attributes =
+	Relevancy 
+	Proper Classification
+	Formatting
+	Accessibility
+
+3 Basic ML paradigms
+	Supervised Learning
+	Unsupervised Learning
+	Reinforcement Learning
+
+RGB is a additive color set(used in camera) while CMYK is a subtractive color set(used in printers) why ?
+
+On the edge of the image , there are high frequencies because the color changes are big, we use Low Pass Filters. and vice versa.
+
+Convolution is combining of two signals to make a third signal.
+
+Forward Propagation = movement of input from hidden layers to output layers
+
+Backward propagation = when we go back to reevalutate the previous processes to minimize error . All the functions we back propogate ,
+ they should have a first derivative.
+
+The rate at which we descend toward the minima in a cost function is called Learning Rate .
+
+Activation Functions ?
+Mostly used = sigmoid , reLU , leaky reLU
+
+Sigmoid functions are unipolar.
+
+Vanishing gradients is a problem in which the slope starts to tend towards zero but never becomes zero.
+
+When we train a NN model, we will aalways get a match.
+
+Prediction is always forward pass and training is move back process.
+
+A model can never be fully trained as new and unprecedented can always come.
+
+1 Epoch is one complete cycle involving one forwrd pass and one backward pass.
+
+Gradient Descent =
+	Batch GD algo (epoch= batch size) [going in one direction but smooth]
+	Mini batch algo (epoch = )	[going in one direction but quiet rough]
+	Stochastic GD algo (epoch ) [going in random direction]
+
+Conventional Neural Network =>
+	
+every filter adds a layer of feature and increases the width of feature map
+
+Recetive field is the size of filter u apply (large receptive field uses lower computation) 
+		
+Stride is the distance with which we move our spacial map 
+
+Convolution layer = (N+(2*p)-F)/stride + 1    [ N = size of image  , F = size of spacial map, p = padding]
+
+We reduce the images to feature map to retain the max info and at the same time , decrease the size.
+
+VGG 16 , visual graphics group 
+
+Confusion Matrix 
+	True Positive
+	False Posititve
+	True Negative
+	False Negative
+
+Concept of Transfer Learning. ?
+Concept of Scratch Testing. ?

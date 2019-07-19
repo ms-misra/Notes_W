@@ -1,7 +1,29 @@
+Aim = To learn more about SQL(And to complete the course and get the certificate)
+
+Course Name  = Introduction to SQL
+
+Course Specialization =  Web Applications for Everybody Specialization 
+
+Medium = Coursera
+
+Start date = June 4, 2019
+
+End date = 
+
+------------------------------------------------Week 2---------------------------------------------
+
+To open command line in mysql = 
+	mysql -u root -p
+
+Four Basic Operations in SQL(CRUD)
+	Create/ Insert, Read/Select, Update, Delete
+
 Terminolgy:-
 	relation or tables 
 	tuple or row
 	attribute or column
+
+The first row of the table is called metadata
 
 DDL(Data Definition)
 	Create
@@ -13,6 +35,7 @@ Data Manipulation Language
 	delete
 
 Limit func limits the number of rows in a query
+
 Count func gives count of rows
 Distinct func gives the count of unique values in a column
 
