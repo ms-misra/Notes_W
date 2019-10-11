@@ -116,4 +116,17 @@ to compare only the particualar values of an element use element.value
 
 putting <label> tag on checkboxes lets u check the box by clicking on the text also
 
-<fieldset> tag makes an outline on the whole element and using <legend> tag with in will put the text in between the outline
+<fieldset> tag makes an outline on the whole element and using <legend> tag with in will put the text in between the outline 
+
+EXTRA NOTES:
+
+uses Document object model(DOM) review with OOP.
+every web page is like a tree.
+page content is represented by DOM Scripting lang(JS) use DOM to interact with document.
+accessing DOM is done with API which is same irrespective of browser and scripting lang. 
+
+DOM objects/elements:
+document -> root of page
+element -> node in the tree
+nodelist -> an array of elements
+attribute -> a node in DOM, another way to manipulate doc.
