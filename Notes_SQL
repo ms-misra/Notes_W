@@ -10,7 +10,7 @@ Start date = June 4, 2019
 
 End date = 
 
-------------------------------------------------Week 2----------------------------------------------
+-------------------------------------------Week 2 ------------------------------------------------
 
 To open command line in mysql = 
 	mysql -u root -p
@@ -34,9 +34,68 @@ Data Manipulation Language
 	update
 	delete
 
-Limit func limits the number of rows in a query
+Limit clause limits the number of rows in a query (it gives the first n rows)
 
 Count func gives count of rows
 Distinct func gives the count of unique values in a column
 
-% = wildcard character
+% = wildcard character ( % before a character - anything ending with e)
+
+like clause is used to de wildcard matching
+
+CRUD = create, read , update , delete
+
+VARCHAR = allocates space dynamically (depending on the size)
+CHAR = allocates fixed space
+
+Character Set =
+	TINYTEXT = 255
+	TEXT = 65K
+	MEDIUMTEXT = 16M
+	LONGTEXT = 4G
+
+A latin character set (ASCII) is of 8 bits while a UNICODE character set can be upto 32 bits.
+
+Binary Types =
+	BYTE = 255 bytes 
+	VARBINARy = 65K bytes
+
+Binary Large Objects (BLOB) to store images, text documents, files , etc
+	TINYBLOB = 255
+	BLOB = 65K
+	MEDIUMBLOB = 16M
+	LONGBLOB = 4G
+
+Floating point numbers
+	FLOAT (32 bit) - seven digits of accuracy
+	DOUBLE (64 bit) - 14 digits of accuracy
+
+NOW() function gives the date at the time.
+
+Two tupes of indexing =
+	Hashing 
+	B-Tree
+
+---------------------------------------------------Week 3 -----------------------------------------
+
+Data Normalization :-
+	Do not replicate data (dont put the same string twice)
+	Use integers as keys and refernce the data to be replicated (numbers can be replicated)
+
+Foreign Key is the Primary Key of another table. It basically points to a row in another table.
+
+Always make the smallest tables first (the tables which are independent ie that dont have foreign keys)
+Work form the leaves of the tree to the root
+
+Join operation links across several tables as a part of Select operation using the ON keyword.
+
+ON DELETE CASCADE, ON UPDATE CASCADE = we are telling the databases that if there is a change in one table and the table is connected to another table via foreign key , then update the changes on that second table also.
+	default/RESTRICT = dont allow changes that break the constraint
+	CASCADE = adjust child rows by removing or updating to maintain consistency
+	SET NULL = set the foreign keys columns in the child rows to null.
+
+------------------------------------------------Week 4---------------------------------------------------
+
+To handle many to many relationships in sql , we make a junction table in between and turn the many to many into two (many to one).
+
+	

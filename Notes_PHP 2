@@ -1,0 +1,50 @@
+Course Name = Building Database Applications in PHP
+
+Specialization = Web Applications for Everybody
+
+Lecturer = Charles Severance
+
+Medium = Coursera
+
+Start Date = 16/10/2019
+
+End Date = 
+
+Notes--
+---------------------------------------------------Week 1----------------------------------------------
+
+A class is like a template to make objects.
+
+Objects/Instances are instances of the class. Instances are actual objects that are made at the runtime
+The object consists of state and the behaviour that is defined in the object's class.
+
+The set of values of the attributes of a particulr object is called a state.
+
+Some of the code thats part of the object is called Method/ Functions
+
+"new" keyword is used when making a new object of a class.
+
+'time()' function gives current time in seconds from 01/01/1970 
+
+' -> ' is used to call methods of an object (acces items in an object)
+
+' nl2br("...\n") ' for printing new line
+
+to access static items in a class, use ' :: '
+
+we can make objects of empty class
+
+-------------------------------------------------Week 2---------------------------------------------------------
+PDO 
+
+GRANT ALL ON misc.* TO 'fred'@'localhost' INDENTIFIED BY 'zap';
+
+put  this in a different file and include it everywhere
+	$pdo = new PDO('mysql:host=localhost;port=3306;dbname=misc','fred','zap'); 
+	[to make connection to databse]
+
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  [to see the error listed on screen]
+
+FETCH_ASSOC gives the rows back in an associative array
+
+/prepare,execute statements are used when we have values to sustitute
