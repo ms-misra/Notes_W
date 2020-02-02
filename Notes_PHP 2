@@ -34,7 +34,7 @@ to access static items in a class, use ' :: '
 
 we can make objects of empty class
 
--------------------------------------------------Week 2---------------------------------------------------------
+-------------------------------------------------Week 2-----------------------------------------
 PDO 
 
 GRANT ALL ON misc.* TO 'fred'@'localhost' INDENTIFIED BY 'zap';
@@ -48,3 +48,26 @@ put  this in a different file and include it everywhere
 FETCH_ASSOC gives the rows back in an associative array
 
 /prepare,execute statements are used when we have values to sustitute
+
+PDO automatically takes cares of all the SQL injection queries ( if we use place holders)
+
+error_log("file,SQL error=".$ex->getMessage()) method puts the error message in logs
+
+to see the logs -> got to c:\xampp\php\logs\php_error_log
+
+	http://ophilipp.free.fr/op_tail.htm
+
+$_SERVER['PHP_SELF'] is used to refreash the page
+
+---------------------------------------WEEK 3--------------------------------------------
+
+Cookies are part of the HTTP protocol
+
+Cookies are part of server data that is stored in the browsers.
+
+Cookies are used to mark borwsers. When a server gets many requests from different browsers , it need to know which browser, a particular request came from , so it marks it using cookies.
+
+cookie data ends in $_COOKIE (its a super global array)
+
+Sessions are stored in servers and databases
+

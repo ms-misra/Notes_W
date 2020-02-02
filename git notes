@@ -1,0 +1,10 @@
+git merge --no--ff => we can merge with fast forward. (shows more details)
+
+Github does compression on files.
+
+Git clone = downloads the whole project
+Git pull = brings the new changes on the desktop
+
+zubi.io
+
+jwt (jason web tokens)

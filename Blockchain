@@ -1,6 +1,3 @@
 When a transaction is encrypted by private key, it can only be decrypted by public key and vice versa.
 
-A blockchain is way of joining blocks of data with a chain in an encrypted fashion. 
-Every blocks contains the hash key of previous block and the next block so that it always remains in a chain and 
-if by any chance anything is changed in the blockchain, the hask key gets changed and then the chain gets broken.
 

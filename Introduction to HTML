@@ -23,18 +23,3 @@ cards = &spades; &hearts; &diams; &clubs;
 <tr> table row 
 <th> table header
 <td> table data
-
-Lists are of 2 types:
-<ul> unordered list 
-<ol> ordered list 
-
-<dl> definition list, arranges list in the same way as disctionary.
-
-in <ul> the default is dot numbering and can be changed to disc,circle or square
-in <ol> the default is numeric numbering(1,2,3) and can be cahnged to roman or alphabetic numbering too.
-
-Eg of a list
-<ol>
-<li> list item 1 </li>
-<li> list item 2 </li>
-</ol>

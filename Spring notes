@@ -1,0 +1,106 @@
+the default scope of a bean is singleton
+	Singleton = spring creates on intsance of the bean
+
+other scopes of bean = 
+	prototype  = creates a new bean instance for each container request
+	request = scoped to HTTP web request
+	session =  scoped to HTTP web session
+	glocal-session = scoped to global HTTP web session
+
+on printing the bean out,it gives the name of the bean and its memory location
+
+init-method ="" -> this helps to call any method during bean creation 
+destroy-method = "" -> helps to call any method during bean destruction
+	these  methos cannot have an any arguments and their return type cam be anything (noramlly void)
+
+For "prototype" scoped beans, Spring does not call the destroy method. 
+
+Java annotations are special label or markers added to Java class. They provide matadata about the class. They are processed at compile time or run time(for special processing).
+	@override - eg of annotation, tells that the method is being implemented and class is overridden
+
+	@component - used to give bean-id ( if left without a bean-id , if takes a default bean-id i.e. name of class in small)
+
+we can do dependency injection using Annotations - > spring uses Auto-wiring
+	Spring searches for a class that match a particular property , matches by class or interface and upon finding it, will automatically inject the dependency
+	
+Auto wiring has 3 types of injection -
+	Constructor injection = we use constructor methods with autowired annotation
+	Setter       ''		  = we use setter methods with  autowiredannotation
+	Field        ''       = we use autowired annotation directly on the field [even private ones]       						(field = object of different class) and no need of constructor and setter 							methods. Uses technology called Java Reflection
+
+
+We can inject any dependency using the @Autowired annotation using nay method (no tonly setter method)
+
+If there are more than one dependency injections, then we use @Qualifier annotation to specify. We will give the default bean id of the class (i.e. class name with first letter lowercase)
+
+To inject a properties file using java annotations , we use @Value annotation
+
+To explicitly tell the scope of a bean , we use @Scope annotation
+
+To perform tasks during bean construction and destruction , we use @PostConstruct and @PreDestroy annotations. These annotations can have any access modifier(public, protected or private) and return type and their methods cannot accept any arguments.
+
+For "prototype" scoped beans, Spring does not call the @PreDestroy method. 
+
+When we use Java Configuration Class , we do not need an xml file to configure beans. We make a java file and add @Configuration and @ComponentScan("package.name") and make a class of the same name
+
+@PropertySource() annotation loads the file in the program 
+
+----------------------------------------Spring MVC--------------------------------------------
+
+Spring MVC is a framework for building web applications
+
+In any servlet we make controllers to handle the job. Spring MVC creates another controller to handle these controllers , called the Front controller, also called as DispatcherServelet
+
+M - Model objects (stores the data)
+V - view templates (a JSP page that will provide data to the user)
+C - Controller classes  (performs all the business/functions)
+
+JSP (JavaServer Pages) (similar to php but uses Java)
+
+@Controller annotations say this is spring mvc controller and it inherits @Component annotation (used when making a controller class)
+
+@RequestMapping("/") annotataion is used to choose which controller to send incoming requests. (it also handles all types of frequest)
+	("/") -> shows the root controller 
+
+Development process of Spring controller _
+	create controller class
+	define controller method
+	add requstmapping to controller method 
+	return view name
+	develop view page
+
+To access data from a POST/GET request , we use ${param.parameterName}
+
+Model is a container for your application data. Controller puts data in the model and the view page (JSP) can access data from the model
+
+To reaad form data in your controller code, we can pass in the HttpServletRequest in the controller method
+
+to get a something form the HttpServletRequest, we use the method request.getParameter("parameterName")
+
+to add attributes to the model, we use model.addAttribute("message",attribute)
+
+To access data from the model , we use ${parameterName}
+
+we use ${pageContext.request.contextPath} to access the correct root directory for your web application.
+	Used to add images, css and js files 
+		<img src="${pageContext.request.contextPath}/resources/images/spring-logo.png">
+
+The Web Application Archive (WAR) file is a compressed version of your web application. It uses the zip file format but the file has the .war extension.
+	we can deploy war files sperarately on Tomcat server by copying it to <tomcat-install-directory>\webapps
+
+@RequestParam("parameterName") String Variable  => this annotation binds the value of parameter to the given varaible
+
+if we add a requestmapping to the front controller then all the requestmappings to controller methods will be relative to it
+
+Spring MVC form tags support data binding
+we reference the tags by <%@ taglib prefix="form" uri ="http://www.springframework.org/tags/form" %>
+
+Form tags :- 
+	form:form - main form container
+	form:input - test field
+	form:textare - multi line text field
+	form:checkbox - checkbox
+	form:radiobutton - radio buttons
+	form:select - drop down list
+
+@ModelAttribute("student") Student theStudent => binds the value of attribute student to object theStudent

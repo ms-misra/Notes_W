@@ -117,15 +117,6 @@ transform:translate(x,y) = moves element x,y pixels (according to catesian)
 Position = values {static, relative, absolute, fixed}
 	fixed is used for elements that have to be fixed on screen and will be there even if u scroll.
 
------------------------------------------------------Week 4------------------------------------------------------ 
+-----------------------------------------------------Week 4----------------------------
 
-EXTRA NOTES:
-cascading stylesheets effects preference:
-browser default -> external stylesheet -> internal stylesheet -> inline style
-
-Rule precedence:
-if 1 selector defined in 2 files -> rule from most reecent file is used 
-if 1 selector has more than 1 rule in same file -> the most recent one 
-
-!important -  to overide later rules 
-
+you can have many classes of same name in one document but can have only one id of a particular name in 1 document
