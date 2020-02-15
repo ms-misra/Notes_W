@@ -51,7 +51,7 @@ Spring MVC is a framework for building web applications
 
 In any servlet we make controllers to handle the job. Spring MVC creates another controller to handle these controllers , called the Front controller, also called as DispatcherServelet
 
-M - Model objects (stores the data)
+M - Model objects (an object that stores the data)
 V - view templates (a JSP page that will provide data to the user)
 C - Controller classes  (performs all the business/functions)
 
@@ -104,3 +104,54 @@ Form tags :-
 	form:select - drop down list
 
 @ModelAttribute("student") Student theStudent => binds the value of attribute student to object theStudent
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- This tag helps us loop over the values. It references JSTL library   -->
+
+We use Java's Standard Bean Validation Api to validate beans
+
+Common Validation annotations :-
+	@NotNull
+	@Min 
+	@Max
+	@Size
+	@Pattern = must match a regular expression
+	@Future / @Past = date must be in future or past of given date
+
+The Errors or BindingResult parameters have to follow the model object that is being
+bound immediately 
+
+@Valid performs the validation rules on Customer object
+@BindingResult places the results of validation in theBindingResult 
+
+@InitBinder annotations works as a pre-processor. It will pre-process each web request to our controller.
+
+The root cause is the freePasses field is using a primitive type: int. In order to check for null we must use the appropriate wrapper class: Integer.
+
+@interface annotation is used to create customs annotations in java
+@Constraint annotation is used to specify the classes by which it will be validated
+@Target annotation is used to specify where the annotation is applied (on a method or a field)
+@Retention annotation is used 
+
+------------------------------------------------------- Section 18 - Hibernate ---------------------------------------
+
+Hibernate is a framework for persisting/ saving Java objects in a database. Hibernate takes care of all the low level SQL and minimises the amount of JDBC code you have to develop. It provdes the Object to Relational Mapping ORM
+
+JDBC (java Database Connectivity) is an application programming interface for Java which defines how a client may access a database.
+
+Hibernate uses JDBC to communicate to database. 
+
+Entity class = a java class that is mapped to the database
+
+Session factory reads the hibernate onfig file , created session objects. it is a heavy weight object, we only create it once in the project
+
+Session is a wrapper around the JDBC connection to the database. the Main object used ot save/retrieve objects. It is short lived
+
+@Id annotation tells that this field is primary key.
+@Column(name="") maps to the column of the table in database
+
+@GeneratedValue(strategy=GenerationType.IDENTITY) = lets MySQl handle the generation Auto_Increment using the id annotation or 																identity column
+									   .AUTO) = picks an appropriate strategy for the particular database
+									   .SEQUENCE) =  assigns primary keys using a database sequence (Oracle DB2 uses sequences)
+									   .TABLE) = assigns primary keys using an underlyng database table to ensure uniqueness
+
