@@ -1,0 +1,50 @@
+Start Date = 22/03/2020
+
+End Date = 25/03/2020
+
+Course = Introduction to MongoDB
+
+Platform =  Coursera 
+
+Instructor = MongoDB Inc
+
+
+----------------------------------------------------- JSON -----------------------------------------------------------
+JSON (JavaScript Object Notation) is a data representation format. Its light weight and easy to write/read.
+
+JSON is superset of JavaScript
+
+jSON supports - Strings, Numbers (Int, float and scientific), Booleans, Null, Arrays and Objects(key-value pairs)
+
+arrays denoted by - [ "string ", something, 123]
+
+objects are denoted by - { "achint" : "is awesome", "age ": 20, "life's": "good"}
+
+surrounding something in ` will make it appear as text in console.
+
+JSON.parse(file) - parses the text wrapped in `....` as normal json in console
+
+-------------------------------------------------- Week 1 ------------------------------------------------------------
+MongoDB is a object database and the files are stores in a hierarchical data structure.
+
+A mongoDB cluster is a set of 3 mongoDB databases servers. All servers maintain copies of your data so in case a server crashes or a server stops responding , the python library switches to the other servers. Called  - Automatic Failover
+
+Tables are called collections in Mongodb and rows are called documents
+
+Pymongo library handles all the stuff related to MongoDB
+
+MongoClient class helps us to establish a client connection to Mongodb
+
+The Aggregation Framework is a set of analytics tool within MongoDB that allow you to run various types of reports and analysis on documents in one or more MongoDB collections. It works like a pipeline with many stages connected to each other (previous stage output is next stage input). Every stage does a generic job and we can parameterize it to do a specfic job. 
+
+An identifier first stage always begins with a $ sign
+
+$group - groups documents with some specified expression and outputs to the next stage a document for each distinct grouping.
+
+$facet - lets you run multiple pipelines parallely
+
+-------------------------------------------------- Week 2 ------------------------------------------------------------
+
+-------------------------------------------------- Week 3 ------------------------------------------------------------
+
+

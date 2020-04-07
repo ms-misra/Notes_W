@@ -1,0 +1,26 @@
+Start Date - 08/03/2020
+
+Finish Date - 
+
+Course Name - Machine Learning by Stanford University
+
+Instructor - Andrew Ng
+
+Platform - Coursera
+
+-------------------------------------------------- Week 1 ----------------------------------------------------------
+Machine learning is the process of getting computers to learn withour being explicitly programmed 
+
+Regression means producing continous value outputs
+
+In Supervised learning, we give the dataset with the correct answers. There is a relationship between the input and the output ans ths answers are known. It has two forms - Classififcation and regression 
+
+Classification gives a categorial answer. we try to find a discrete output
+
+Regression gives a numerical answer. Regression prediction problems are usually quantities or sizes. we find a continuous function
+
+Support Vector Machine - algo help the computer to deal with an infinite number of attributes
+
+Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don't necessarily know the effect of the variables.
+One form of Unsupervised Learning is Clustering , we make cluster or groups on the basis of particular properties of input data
+

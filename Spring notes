@@ -133,7 +133,7 @@ The root cause is the freePasses field is using a primitive type: int. In order 
 @Target annotation is used to specify where the annotation is applied (on a method or a field)
 @Retention annotation is used 
 
-------------------------------------------------------- Section 18 - Hibernate ---------------------------------------
+------------------------------------------------------ Section 18 - Hibernate ---------------------------------------
 
 Hibernate is a framework for persisting/ saving Java objects in a database. Hibernate takes care of all the low level SQL and minimises the amount of JDBC code you have to develop. It provdes the Object to Relational Mapping ORM
 
@@ -147,11 +147,149 @@ Session factory reads the hibernate onfig file , created session objects. it is 
 
 Session is a wrapper around the JDBC connection to the database. the Main object used ot save/retrieve objects. It is short lived
 
+@Entity and @Table(name="taable-name") annotations are used on the class method to map to the table of the class
+
 @Id annotation tells that this field is primary key.
 @Column(name="") maps to the column of the table in database
 
-@GeneratedValue(strategy=GenerationType.IDENTITY) = lets MySQl handle the generation Auto_Increment using the id annotation or 																identity column
+@GeneratedValue(strategy=GenerationType.IDENTITY) = lets MySQl handle the generation Auto_Increment using the id annotation or identity column
 									   .AUTO) = picks an appropriate strategy for the particular database
 									   .SEQUENCE) =  assigns primary keys using a database sequence (Oracle DB2 uses sequences)
 									   .TABLE) = assigns primary keys using an underlyng database table to ensure uniqueness
+
+Fetch types - 
+	Eager - will retrieve everything
+	Lazy - will retrieve on request
+
+to join two column via foreign key ,we use @OneToOne annotation and @JoinColumn(name="column-name") annotation
+
+Cascade types - (what happens to the entity , will also happen to the related entity)
+	Persist / Remove / Refresh / Detach / Merge / All - all the above cascade types
+
+@OneToOne amnnotation has by default, no operations are cascaded, so to cascade , use @OneToOne(cascade=CascadeType.ALL)
+(For single direction relationship)
+
+for dual direction relationship, use @OneToOne(mappedBy="") , we can also add the cascadeType parameter in the annotation 
+	mappedBy attribute is used to make the relation bidirectional, it points to the object of this class in other class and is accompanied by @JoinColumn(name="") in the other class pointing to his clas.
+
+	@JoinColumn annotation finds the join column depending on the context, or depends on the type of relation, read --
+		https://www.udemy.com/course/spring-hibernate-tutorial/learn/lecture/8164036#questions
+
+Data is fetched in different ways - (only load data when absolutely needed)
+	Eager - will retrieve everything
+	Lazy - will retrieve on request
+
+fetch=FetchType.LAZY  attribute makes the content load lazily (only loads the constructor and then laods other stuff on demand)
+
+Default fetch types - 
+	@OneToOne =  FetchType.EAGER
+	@OneToMany = 		  .LAZY
+	@ManyToMany = 		  .EAGER
+	@ManyToMany = 		  .LAZY
+
+
+To retrieve the data, you need to have an open hibernate session (connectivity to the database), or hibernate will throw an error
+
+A join table is a table that provides a mapping between two tables. It has foreign keys for each table to define the mapping relationship 
+
+@JoinTable annotation tells Hibernate about the Join table, and the two columns which use foreign keys to the other tables.
+	@JoinTable(name="", joinColumns=@JoinColumn(name="first_column"),inverseJoinColumns=@JoinColumn(name="second_table"))
+
+
+------------------------------------------------- CRUD project ----------------------------------------------------------
+
+DAO - Data Access Object - its a helper class for interfacing with the database. Its needs the Hibernate session factory to communicate to the database.
+
+the Hibernate Session Factory needs a DataSource that has the database connection info.
+
+Enity class is basically a java class that is mapped to a database table
+
+@Transactional annotation - automatically  begins and ends a transaction for your hibernate code. 
+
+@Repository annotation - is used to register the DAO implementations. (comes under component scannning)
+
+@GetMapping & @PostMapping annotations - to set the request type of form 
+
+We add a service layer between the Main controller and the DAO, called the Service Layer. This layer can integrate data from multiple sources / DAOs
+
+@Service annotation id applied to Service implementation (it also implements component scanning)
+
+Whenever we link a different page in spring, we use href="${pageContext.request.contextPath}/fileLocation/fileName"
+
+--------------------------------------------------- AOP -----------------------------------------------------------
+
+AOP stands for Aspect oriented programming. It encapsulates cross-cutting logic. it works behind the main lines and the project doesnt know about the AOP aspect/class.
+
+AOP is used for logging, security , exception handling and api management
+
+Aspect : module of code for a cross-cutting concern
+
+Advice - What action is taken and when it should be stopped 
+
+Join point - When to apply the code during program execution 
+
+Pointcut - A predicate expression for where advice should be applied 
+
+Weaving - connecting aspects to target objects to create an advised object. Different types of weaving - Complie-time, load-time or run time(slowest)
+
+Run time waving - uses a AOP proxy between communicaton from Main app to Traget object.
+
+AOP is used via Spring AOP or AspectJ.
+	Spring AOP - only supports method level join points but run time code weaving is slower
+	AspectJ - faster and supports all join points and weaving but code gets complex
+
+@Transactional annotation uses AOP to start, commit and end the transactions
+
+@enableAspectJAutoProxy annotation is for support of processing the Aspect classes
+
+getClass() - method gives the class name for display
+
+Pointcut Expression Language - 
+	execution(modifiers-pattern? return-type-pattern declaring-type-pattern? method-name-pattern(param-pattern) throws-pattern?)
+	? - means the pattern is optional 
+	We can use wildcard (*) characters
+
+param-pattern - 
+	() - matches a method with no arguments 
+	(*) - matches a method with one argument of any type
+	(..) - matches a method with 0 or more arguments of any type
+
+
+@Before("execution()") annotation is used to write poincut expression before the advices
+
+@Pointcut("execution()") annotation is used for poincut declaration ie store the pointcut expression in a method (like a variable) and reuse it as much as u want.
+
+We can combine pointcut experessions and perform AND(&&) , OR(||) and NOT(!) 
+
+The order of advices( pointcut expressions) being applied to the same code is random(as default)
+but we can control the order using @Order annotation and by placing the advices in separate aspects
+
+@AfterReturning(pointcut="",returning="") annotaton is used to apply pointcut expression after the method has run. We can post process the data (when the data is output from the method just executed).
+	returning parameter can help store the result of method in a variable
+
+@AfterThrowing(pointcut="",throwing="") annotation applies the point cut expressions after the method throws an exception. The exception still happens and is displayed normally.
+
+@Around() annotation applies before as well as after the method has executed and also could be used to handle the exception (also fix it).
+
+@After() annotation applies the pointcut expressions after the method has completed irrespective of the output even if its an exception
+
+PreceedingJoinPoint is a handle to the target method 
+
+Spring prints to the Logger output Stream while Sopln prints to Standard output stream. we can use Logger class instead of Sopln to print to the Logger Output stream
+
+----------------------------------------------- Maven -----------------------------------------------------------
+
+Maven is a project management tool. Use - build management and dependancies. Maven will find the needed JAR files and we dont have to use build path / class path and we have a standard directory structure.
+
+POM file  - Project Object Model file - basically a configuration file / shopping list for all the needed dependancies
+
+To add a dependancy , we need - Group Id, Artifact Id and Version (Optional)
+
+
+
+
+
+
+
+
 
