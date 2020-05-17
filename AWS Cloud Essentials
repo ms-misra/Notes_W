@@ -1,0 +1,118 @@
+Start Date - 15/05/2020
+
+End Date - 
+
+Course : - AWS Cloud Practitioner Essentials: Introduction to the AWS Cloud
+
+Platform : - AWS Training and Certification
+
+Instructor : - Kirsten Dupart, Eric Balmer
+
+----------------------------------------------------------------------------
+
+Cloud computing refers to the on-demand delivery of IT services and application via the internet.
+
+Cloud computing can help us reduce risks by being agile ie quicly able to learn and adapt to change
+
+Scalabilty means the ability to resize the resources as necessary
+
+Factors that enhance agility are - 
+	increasing the speed
+	ease of experimentation
+	cultivating a culture of innovation
+
+Reliability is the ability of system to recover from infrastructural or service failures
+In CC (Cloud Computing), reliability means to acquire computing resources to meet demand and mitigate disruptions.
+
+Three ways to use AWS -
+	AWS Management console (GUI) - also have a app of itself
+	Command Line Interface
+	Software Development Kits - helps to use AWS in existing applications
+
+EC2 - Elastic Compute Cloud
+
+EBS - needed when you need to add more storage for your instance. can choose between magnetic and SSD. can take snapshots of data and recreate or share data using the snapshots. 
+
+command lsblk - to show all the storages connected to that instance
+
+Amazon SImple Storage Service (S3) - like google drive, u create a bucket and put data in it. Every unit of data i backed in 3 different places/ drives in the same region. can also back up in different region. Can do Big data analytics on data.
+	Url of data has - bucket-name, amazon region name, object location in bucket
+
+CDN - stands for content delivery network
+
+Amazon provides a CDN service for faster delivery to end users, beacuse it decreases latency - Amazon CloudFront
+It provides two types of CDN - Web (for a web distribution) and RTMP (for streaming media files)
+
+Amazon Cloudflare is also a CDN but is solely focused on providing security to websites against DDoS and other malicious attacks
+
+Amazon VPC (Virtual Private Cloud) - for meeting the networking requirements, helps to create a private virtual network, can launch instances and dbs in vpc
+	A vpc can span in many different availability zones but remain in regions.
+	an account can create many vpcs
+
+Security groups act as firewalls to your virtual networks that control traffic to one or more instances.
+
+Application Load Balancer is the second type of load balancer which is a part of load balancing service (first type was the classic load balancer). Enhanced features are - additional Supported protocols(HTTP/2 and Websockets), enhanced metrics and access logs, and more targeted health checks.
+	It helps to use containers to host microservices and make mulltiple request to a single instance but differ the path based on ports.
+
+Listener is a process that checks for connection requests, using the protocol and port that you configure. the rules that you define for a listener determine how the load balancer routes requests to the targets in one or more target groups.
+
+Target is a destination for traffic based on the established listener rules.
+
+Each target groups routes requests to one or more registered targets using the protocol and port number specified. A target can be registered with multiple target groups. health checks can be configured on a per target group basis.
+
+Added features in ALB =
+	Path based routing allows you to create rules to route to target groups based on the URL in the request.
+	Host based ruting enables the agility to have multiple domains supported by the same load balancer and route requests to target groups based on the domain requested.
+
+requst tracing is tracking requests from clients to targets and enable dynamic host ports.
+
+Auto scaling helps you ensure that you have the correct number of Amazon EC2 instances available to handle th load for your application. Has 3 core components - 
+	Launch Configuration - what to deploy
+	Auto Scaling group - where to deploy
+	Auto Scaling Policy - when to deploy
+
+Amazon Route 53 is a DNS or Domain Name Service - designed to provide developers a reliable and highly scalable way to route end users to endpoints.
+
+Elastic Load balancer is used to route requests from an application composed of many individual services to a service based on the content of the request.
+
+ARDS - Amazon Relational Database Services. 
+
+AWS Lambda - is a fully mananged serverless compute service that lets you run code without provisioning or managing services. We can create backends for our IOT devices/mobile/web applications 
+
+Amazon Kinesis - makes it easy to collect, process, and analyze real-time, streaming data so you can get timely insights and react quickly to new information. Amazon Kinesis enables you to process and analyze data as it arrives and respond instantly instead of having to wait until all your data is collected before the processing can begin.
+
+AWS Elastic Beanstalk - its a Platform as a Service. It helps you in deploying your code in any environment of your choice. It reduces the management complexity of deployment.
+
+Amazon Simple Notification Service (SNS) - is a flexible fully managed pub/sub messaging and mobile communication service . It also coordinates the delivery of messages to subscribing endpoints and clients  
+
+Amazon CloudWatch monitors your Amazin Web Services (AWS) resourcs and the applications you run on AWS in real time. It collects and tracks metrics like CPU utilization, data transfer and other stuff. we can set alarms on metrics and automatically react to changes. We can invoke other services to do things.
+
+Amazon CloudWatch Logs - monitors and troubleshoot systems and applications using existing log files. Monitor log for specific phrases, values or patterns.
+
+Amazon CloudWatch Metrics - data about the preformance of the system.
+
+Amazon CloudWatch Alarms - watches a single metric and takes an action based on the value of the metrics like sending a email or sms notification
+
+Amazon CloudWatch Events - near real-time stream of system events that describe changes in the system.
+
+AWS CloudFormation simplifies the task of repeatedly and predictably creating groups or related resources that power your applications. It is all about automating resource provisioning.
+	Two reqirements to run CloudFormation is - templates and permissions(to access templates)
+		Templates - decribes the sources to provision. They are text files wriiten in json or yaml. it there is error in the templates , CF will roll back any objects already created in the templates.
+
+Five pillars of AWS framework - 
+	Security , Reliability, Performance efficiency , Cost Optimization and Operational Excellence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

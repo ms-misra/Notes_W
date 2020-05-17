@@ -1,0 +1,41 @@
+Start Date - 14/05/2020
+
+End Date - 
+
+Course - React JS - A Complete Guide for Frontend Web Development
+
+Platform - Udemy
+
+Instructor - Qaifi Khan 
+------------------------------------------------------------------------
+
+Var is used to create variables 
+
+Variable names cab contain letters, digits, _ and $. They can start with an _ and $. Case-Sensitive 
+
+JS always stores a number in 64 bits 
+
+NaN and Infinity are numbers in JS
+
+console.clear() - method clears up the console every time we reload
+
+var.toString() - converts a number to string 
+
+var.parseInt() - convert a string to am integer 
+
+var.parseFloat() - converts a string to a floating point number 
+
+var.toFixed() - takes a floating number and round it off to a given position, it no index is given in the parameters, it round up to nearest integer , otherwise to rounds up to the given index.
+
+
+
+
+
+
+
+
+
+
+
+
+

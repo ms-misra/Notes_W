@@ -13,7 +13,7 @@ Machine learning is the process of getting computers to learn withour being expl
 
 Regression means producing continous value outputs
 
-In Supervised learning, we give the dataset with the correct answers. There is a relationship between the input and the output ans ths answers are known. It has two forms - Classififcation and regression 
+In Supervised learning, we give the dataset with the correct answers. There is a relationship between the input and the output and ths answers are known. It has two forms - Classififcation and regression 
 
 Classification gives a categorial answer. we try to find a discrete output
 
@@ -23,4 +23,35 @@ Support Vector Machine - algo help the computer to deal with an infinite number 
 
 Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don't necessarily know the effect of the variables.
 One form of Unsupervised Learning is Clustering , we make cluster or groups on the basis of particular properties of input data
+
+Linear regression with one variable (univariate linear regression) eq => y = mx + c
+	the eq is the hypothesis or function
+	Cost function : J(θ0​,θ1​) = 1/2m {∑(i=1,m)[h(x)-y]^2}, minimize J 	[aka Squared Error function]
+
+The mean is halved as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the 1/2 term. 
+
+If θ-0 is set to 0 then the cost function minimizes at θ-1 = 1 for univariate linear regression 
+
+A contour plot is a graph that contains many contour lines. A contour line of a two variable function has a constant value at all points of the same line. 
+
+Gradient descent is used to minimize functions , we start taking value of variables and solving the function. then we update the value and again solve the function with updated values, till we get the minimum value of function with a particular set of values of variables. we start with 0
+	So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That's where gradient descent comes in.
+
+Only square matrices have inverse 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

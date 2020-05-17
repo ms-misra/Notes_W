@@ -1,0 +1,43 @@
+Date -11/02/2020
+
+watch -n 1 date => command gives the real time in cmd and update very second
+
+4 ways to install a OS -
+	Baremetal = directly on the laptop 
+	Virtualization = OS is installed on top of baremetal OS
+	Dual booting = 
+	Cloud Computing = 
+
+Ctrl + C => terminates the program 
+Ctrl + Z => it pauses the state of programs and puts it in the program
+
+jobs => this command shows the jobs currently in the background
+
+fg <program no./id> => starts the program from its paused state (programs in the background)
+
+<program> & => puts the program in the background but the program is still in the running state 
+
+echo "`date`" => will run the date command and the echo command simultanously, ie it will the print the date command in new line and then puts the controller in next line (echo)
+
+echo -n "hello" => will put the controller in the same line as the output 
+
+echo -e "hello\nhi" => will read the \n as new line character only if -e is written
+
+escape sequences :- \b = for backspace. \n = new line , \t = tab
+
+man <command> => shows the manual pages of the command
+
+U can create a file with cmd commands in it and run the file using bash <filename> command . Thid type of file is called scripting file
+
+command to output time on terminal with 1sec refresh rate and also we can still use the command
+# while : 
+> do 
+> echo -n -e "`date +%T``sleep 1`\b\b\b\b\b\b\b\b" 
+> done & 
+
+Today we learned about -
+1= types of ways of installing an OS - Baremetal and Virtualization, also learnt about  Dual Booting and Cloud Computing
+2= Learned about the difference between Ctrl + Z and Ctrl + C
+3= learned usage of the commands - watch , jobs, fg, &(amp), man, echo  and also about some escape sequences
+4= learned to create the command to output time on terminal with 1sec refresh rate and still be able to use the terminal
+

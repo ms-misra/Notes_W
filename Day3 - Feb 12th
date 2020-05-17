@@ -1,0 +1,21 @@
+Date - 12/02/2020
+
+Network is a signal either wired or wireless
+
+Mobile number cloning/spoofing - can duplicate a mobile number  
+
+Any number that can be saved in  4 bytes is a valid IP address and we can convert normal IPs to binary and then to decimal and still use those IPs 
+
+nslookup <domain-name> => command to get the IP address of a domain name 
+
+bc command opens up binary calculator in the terminal 
+
+formula for converting an IP address to binary and then to decimal value = (first octet)*2^24 +(2nd octet)*2^16 + (3rd octet)*2^8 + (fourth octet)*2^0 
+(no idea how it came but it does give th right answer)
+
+So in this session we learned :-
+1= we can clone mobile numbers and IP address
+2= an IP could be any number taking 4 bytes of space and a formula to convert the IP to binary and then to decimal value
+3= some terminal commands - nslookup <domain-name>, bc, ping <address>
+
+

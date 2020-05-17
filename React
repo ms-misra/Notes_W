@@ -1,0 +1,67 @@
+Start Date - 10/05/2020
+
+End Date - 
+
+Course - React JS essentials bootcamp for beginners
+
+Platform - Udemy 
+
+---------------------------------------------------------------------------------
+
+React is a way to make HTML components reusable.
+
+every Compnonet has a render method wich contains the markup, it is the virtual dom 
+
+React uses JSX - javascript with xml to render components 
+
+React Redux is an application level store of data , without the need to have a database for some temporary store at the application level.
+
+whenever we want to update anything in the state. we always do it using setState() method
+
+When we crate a react js component, we can either create a function or a class.
+	A function is always stateless, we cannot create states, we can only pass props(properties).
+	In a class, we can access the state as well as the props.
+
+In a class, we create a render method to return the components and a constructor to use the props
+
+State is a property which is unique to a component, we initialize all state variables inside constructor
+
+All the markup is showed in the render method
+
+we export the app to make it accessible for other components
+
+Synthetic methods are methods 
+
+React events are named using camelCase
+
+In JSX, we pass a function as the event handler rather than a string
+
+If you have to stop the default behaviour of a method, we do not return false (as in HTML), we use e.preventDefault() function
+
+
+
+
+
+
+
+==============================================================================================
+
+Start Date - 11/05/2020
+
+End Date - 
+
+Name - ReactJS Crash Course 
+
+Mentor - Hitesh Chowdhary
+
+Platform - learncodeonline.in
+
+--------------------------------------------------------------------------------------------
+
+There are two types of components - Functional (function based) and classic (class based)
+
+Every function can return only one element (HACK - envelope everything in a div tag)
+
+class attribute is written as className in react
+
+whenever we want to send data from one component to other we use props (aka properties)

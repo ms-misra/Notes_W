@@ -1,0 +1,19 @@
+Date - 10/02/2020 
+
+which command in cmd tells you the location of any program saved in your OS
+
+gedit <path> command in cmd opens the text editor with the code of file whose path has been entered
+
+cal command gives the calender of month
+
+cal <year> command gives the calender of the full year 
+
+espeak-ng <stuff> command echos the stuff throught the speaker 
+
+date | espeak-ng command says the date through the speaker 
+
+Today we got to know about -
+1- that all the browsers store temporary data on the RAM like browser authentication data in the form of cookies and if we could retrieve those cookies  of other people we will gain access to their accounts.
+2- we got to know about commands such as  date, echo , cal, which, gedit and espeack-ng
+3- we got to know about the 1752 English Calender riots, and we lost 11 days in Sep,1752
+

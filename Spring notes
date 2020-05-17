@@ -93,7 +93,9 @@ The Web Application Archive (WAR) file is a compressed version of your web appli
 if we add a requestmapping to the front controller then all the requestmappings to controller methods will be relative to it
 
 Spring MVC form tags support data binding
-we reference the tags by <%@ taglib prefix="form" uri ="http://www.springframework.org/tags/form" %>
+
+we reference the tags by 
+<%@ taglib prefix="form" uri ="http://www.springframework.org/tags/form" %>
 
 Form tags :- 
 	form:form - main form container
@@ -277,19 +279,120 @@ PreceedingJoinPoint is a handle to the target method
 
 Spring prints to the Logger output Stream while Sopln prints to Standard output stream. we can use Logger class instead of Sopln to print to the Logger Output stream
 
------------------------------------------------ Maven -----------------------------------------------------------
+----------------------------------------------- Maven -----------------------------------------------------
 
 Maven is a project management tool. Use - build management and dependancies. Maven will find the needed JAR files and we dont have to use build path / class path and we have a standard directory structure.
 
 POM file  - Project Object Model file - basically a configuration file / shopping list for all the needed dependancies
 
-To add a dependancy , we need - Group Id, Artifact Id and Version (Optional)
+To add a dependancy , we need - Group Id, Artifact Id and Version (Optional) - These are known as GAV
 
+Archetypes contain template files / starter files for a given maven project.
 
+You can host your own private depandacies and repositories by hosting your own private maven server like nexus from sonatype and archiva from apache
 
+---------------------------------------- Spring Security ------------------------------------------
 
+Spring security is implemented using Servlet filters in the backgroud.
 
+2 methods of securing a webapp : declarative and programmtic
 
+Servlet filters are used to preprocess and post process web requests based on security logic 
 
+Maven war plugin is used to tell that we will be suing all Java configuration and no XML 
 
+@EnableWebMvc - provides similar support to <mvc:annotation-driven /> inm XML. Adds conversion, formatting and validation support.
+
+Spring Security provides a class called Spring Security Web App Initializer. It is used to initialize the servlet container. it enables the Spring Security Filters.
+
+Spring form tag - <form:form> - provides automatic support for spring security defenses
+
+Spring security protects against Cross Site Request Forgeries (C-Surf)
+
+http.authorizeRequests().antMatchers("/").hasRole("") - gives accese to the path to a selected roles 
+
+<security:authorize access="hasRole('')"> tag lets you display stuff based on user role access
+
+bcrypt algorithm = performs one way encrypted hasing, adds a random salt to the password for additional protection and incldes support to defeat brute force attacks 
+
+---------------------------------------------- REST APIs and REST webservics------------------------------------------
+
+REST - Representational State Transfer - Lighweight approach for communicating between applications
+
+Data binding is the process of converting the JSON data into Java POJOs (Spring does it wit the help of Jackson)
+
+AN HTTP request message has 3 parts - request line, header variables, message body.
+	Request Line has the actual request method - GET / POST / PUT / etc
+	Header variables has the request metadata and other info about message 
+
+the response message also has the same data - repsonse line, header variables and message.
+	Response line has the server protocol and status code - 404/200/403 etc
+	header variables 
+
+Status codes -  
+	100-199 = Informational
+	200-299 = Successfull
+	300-399 = Redirection
+	400-499 = Client error [ 401 - Authentication Required, 404 - File Not Found]
+	500-599 = Server error [500 - Internal Server Error]
+
+The message format is descibed by MIME (Multipurpose Internet Mail Entension) content type,
+
+@RestController annotation - extension of @Controller and handles REST requests and responses
+
+Path variables are used to fetch single entites from the data {parameterizing the rest api to get specific data}
+	@PathVariable annotation is used to bind path variable to method parameter
+
+@PostConstruct annotation is called only once when the bean is constructed. 
+	This annotation is executed when the bean has initialized all the things and all the dependencies have been injected. 
+
+@ExceptionHandler annotation is used to define exception handler methods. Exception Handleer will return a Response Entity.
+
+Response Entity is a wrapper for the HTTP response object.
+
+Jackson returns an empty body for a null input
+
+@RequestBody annotation binds the POJO to a method parameter
+
+@Configuration annotation - enables tp register extra beans with @Bean or import other configuration classes
+
+@EnableAutoConfiguration Annotation - Enables Spring Boot's auto-configuration support
+
+@SpringBootApplication annotation - enables Auto configuration ,Component scanning and Additional configuration
+	Does the work of @EnableAutoConfiguration, @ComponentScan and @Configuration
+
+Spring Boot Starters are a curated list of Maven Dependencies for making the development of Spring easier
+
+Spring boot Dev Tools - auotmatically update the project and restart the server when some new code is added to the project
+
+Spring Boot Actuator - exposes endpoints to monitor and manage your application. We get the Dev-OPs functionality out of the box. All the actuator endpoints are prefixed with /actuator. Some actuator endpoints are - 
+	/health - Health info about your application
+	/info - Info about your project 
+	/auditevents - audit events for your application 
+	/beans - List of all beans registered in the Spring application context
+	/mappings - List of all @RequestMapping paths
+	/threaddump - Lists all the threads running in our program
+
+JPA - Java Persistence Api - is used for Object to Relatinal Mapping (ORM). EntityManager is part of JPA 
+	EntityManger can serve as a wrapper for a Hibernate Session object. it is similar to Hibernate SessionFactory
+
+Spring Data JPA helps to reduce the boiler plate DAO code like its implementatyion and other stuff. We just simply extend JpaRepository interface and plug in the entity type and primary key and Spring will give the CRUD implementation of it . 
+
+Spring Data Rest helps to reduce the boiler plate rest code like its implementatyion and other stuff. We add the Spring data rest dependency in POM file, and simply extend JpaRepository interface and plug in the entity type and primary key and Spring will give the CRUD implementation of it .
+	There is no need for Rest Controller and rest service 
+
+Spring data rest endpoints are HATEOAS compliant 
+	HATEOAS - Hypermedia as the Engine of Application State (Hypermedia driven sites provide info to access REST interfaces). Its basically meta data for the Rest data
+	HATEOAS uses HYpertext Application Language (HAL) data format
+
+@RepositoryRestResource(path="") annotation - we can choose to name the endpoints accourding to our need
+
+We can perform configuration, sorting, pagination using Spring Data Rest
+
+------------------------------------- Thymeleaf -------------------------------------
+
+Thymeleaf is a Java templating engine. Commonly used to generate the HTML views for web apps.
+It is same as JSP but the key difference is JSP is only for web related uses but Thymeleaf is used for both web and non web related uses.
+Thymeleaf files have .html extension.
+ 
 

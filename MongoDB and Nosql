@@ -9,7 +9,7 @@ Platform =  Coursera
 Instructor = MongoDB Inc
 
 
------------------------------------------------------ JSON -----------------------------------------------------------
+--------------------------------------------- JSON -----------------------------------------------------------
 JSON (JavaScript Object Notation) is a data representation format. Its light weight and easy to write/read.
 
 JSON is superset of JavaScript
@@ -25,6 +25,10 @@ surrounding something in ` will make it appear as text in console.
 JSON.parse(file) - parses the text wrapped in `....` as normal json in console
 
 -------------------------------------------------- Week 1 ------------------------------------------------------------
+
+username - analytics
+password - analytics-password
+
 MongoDB is a object database and the files are stores in a hierarchical data structure.
 
 A mongoDB cluster is a set of 3 mongoDB databases servers. All servers maintain copies of your data so in case a server crashes or a server stops responding , the python library switches to the other servers. Called  - Automatic Failover
@@ -41,10 +45,204 @@ An identifier first stage always begins with a $ sign
 
 $group - groups documents with some specified expression and outputs to the next stage a document for each distinct grouping.
 
-$facet - lets you run multiple pipelines parallely
+$facet - lets you run multiple pipelines parallely and all the pipelines will get the smae input 
 
 -------------------------------------------------- Week 2 ------------------------------------------------------------
+$project - allows us to specify a projection on all documents that pass through this stage. That means it helps in reshaping documents ( it allows us to project only those fields we want to work and reshapes them it our need and passes them on through the pipeline)
+
+The $addFields stage is equivalent to a $project stage that explicitly specifies all existing fields in the input documents and adds the new fields.
+
+$cond - is a conditional operator with fields - if, then and else
+
+$ne - not equal to , has two values in array and compares them (it expects two vlaues in an array to compare)
+
+$dateFromString - converts the string into a date
+
+$arrayElemAt - is used to convert strings to array elements. ArrayElemAt will select the value stored at a particular index within an array. 
+
+We cant use or write regular expressions in the aggregation framework.
+
+_id : ObjectId('dqdqd')  => uniquely identifies a document in a database. Made of current time in unix, the ID of the machine that is running it, the process ID and a counter that starts with a random value.
+
+mongodb supports the storing of decimal numbers via datatype Decimal128
+
+By default , mongodb stores all numbers as double 
+
+$all = filters the array for all the values mentioned in the filter
+
+Projection - we can output selected fields based on filter (1-selected, 0-unselected), _id has a default projection value of 1
+
+$gte - greater than or equals
+
+$eq - equals
+
+$elemMatch - this operator lets us put two filters and collectively use the filters ie use AND operation b/w the filters
+
+Whenever we want to access the elements of an object/document inside another object/document, we use the dot (.) notation
 
 -------------------------------------------------- Week 3 ------------------------------------------------------------
+
+Indexes are special data structures used by mongodb that allows to do some enhanced functionality like making the queries  more efficient and faster
+
+There can be a maximum of 64 indexes in a collection
+
+GeoJSON specifies coordinates as [<longitude>,<latitude>]. 
+
+When using $nearSphere, then $minDistance and $maxDistance operators are defined using meters.
+
+When making a query with $geoWithin and $centerSphere, the radius is defined using radians.
+
+When sending data to matplotlib, it always expects data in the form of arrays 
+
+
+
+
+
+
+
+
+
+
+-------------------------- Mongodb Essesntial - Udemy Free Course (33 mins) -----------------------------
+
+Tables/Schemas are called collection in Nosql databases.
+
+Collections are a group of Mongodb documents. All documents in a collection have a simmilar or related purpose. 
+
+Tha main difference in SQL and NoSQL is , we do not use joins to connect two tables but we use references to link between different documents.
+
+to show databases -> show dbs / show databases
+
+to use or create a database -> use db_name
+
+to create a collection -> d.creatCollection("collection_name")
+
+to show collections - show collections
+
+to insert in a collection -> db.collection_name.insert({
+														"key" : "value",
+														"key" : "value"
+													})
+
+to show the data in a collection (.pretty() makes it more readable) -> db.collection_name.find() / db.collection_name.find().pretty()
+
+to update in an existing collection -> db.car.update({
+										"Name":"Achint"
+										},
+										{$set:{
+										"Age" :"21"
+										}
+									})
+
+to insert in an existing collection -> db.car.update({
+										"Name":"Achint"
+										},
+										{$set:{
+										"School" :"SJC"
+										}
+									},{$upsert:true})
+
+to remove collections -> db.car.remove({"name":"collection_name"})
+
+Fundamental Data types supported by Mongodb- String, number, array, date, boolean and onjects
+
+Other Data types -
+Buffer -> used for video, images and audio
+Mixed -> combines different types
+
+$gt - greater than
+$lt - lower than
+$in - is used with arrays 
+
+.sort({property: 1/-1})
+	1 = ascending 
+	-1 = descending
+
+.limit(number) - to limit the number of results
+
+
+
+---------------------------MongoDB basics - LearnCodeOnline (By Hitesh Chowdhary) ---------------------------------------------
+
+NoSQL stands for Not Only SQL 
+
+Read and Write operations in Mongodb are very fast as comparfed to relational dbs
+
+WiredTiger Storage Engine is the default engine used for mongodb
+
+Mongodb allows you to create separate instances of a database.
+
+Mongodb is a collection of documents. 
+
+When there is a delay in a response , we call it asynchronous responses. During the delay, other processes do not stop andd wait, they keep on going.
+
+Mocha is a JS testing framework for easy testing of asynchronous responses
+
+MongoDB has Stitch which is quite similar to firebase 
+
+Mongodb converts JSON data to BSON data before saving it 
+
+CRUD --
+	Create --
+		insertOne(data,options)
+		insertMany(data,options)
+
+	Read -- 
+		find(filter,options) - finds all the entries matching the filter
+		findOne(filter,options) -- returns the first thing matching the filter 
+
+	Update ---
+		updateOne(filter,data,options)
+		updateMany(filter,data,options)
+		replaceOne(filter,data,options)
+
+	Delete --
+		deleteOne(filter,options)
+		deleteMany(filter,options)
+
+To find or delete a particular document/collection, we identify it via a unique key value pair.
+	db.collection_name.deleteOne({"key":"value"})
+
+All functions are case sensitive
+
+To update an entry , we use - db.collection_name.updateOne({"key":"value"}, {$set: {"newKey":"newValue"}}) 
+	The first set of key value pair are for finding the right document, the second KV pair is the part we want ot add. $set is an atomic operator 
+
+When deleting or updating many documents, we use the same function and we find a unique KV pair which is common to the documents we are interested and unique to other and write the second the KV to be added or deleted
+
+To delete the all the documents in a collection , -- db.col_name.deleteMany({})
+
+When using insertMany() function, we put all the documents in an array
+
+Dont use update() function, it somehow messes up the database
+
+.find() command is only for the terminal , instead we have forEach(() => {}) function
+	we use printjson() to print 
+
+When we request data from the server , the server usually doesnt send the data, it sends info of the data the metadata  and this metadata is called Cursor. it only sends the data , when we explicitly tell it. 
+
+When needing specific and limited data from the server, we do not use forEach() because it output the specific data after its fully loaded from the server. This uses up much bandwidth.
+
+So in order to reduce bandwidth, we itself get limited data from the server by using , find() functions with parameters, - 	find({}, {})
+	first {} is used to tell, where we want the data, can be blank if no specific place
+	second {} is used to tell what we want , if left blank - will fetch eveythin, we use flag {0,1} as value of each key to tell the things we want (0 - for not needed and 1 for needed), _id by default has value 1
+
+.toArray() function converts the KV pair as array
+
+To access an object inside a KV pair, we use - .find({"key.object":"value"})
+
+To access an array inside a KY pair , we use - .find({"unique_key":"unique_value"}).arrayKey/.arrayKey[]
+	unique KV is used to identify the document
+
+Relation is a way in which a document contacts with other documents in the database
+
+We can link two different documents in a database using ObjectId
+
+we can create variables on the mongo shell and use it to pass _id
+
+A promise is value returned by an asynchronous function to indicate the completion of the processing carried out by the asynchronous function.
+
+Describe and it blocks are used for testing. They both take two paramters, title and callback function.
+
 
 
