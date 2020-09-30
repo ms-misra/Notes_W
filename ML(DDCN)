@@ -20,6 +20,17 @@ Data Attributes =
 	Supervised Learning
 	Unsupervised Learning
 	Reinforcement Learning
+	
+//******** Gaurang Changes ********//
+Image Processing is a big part of Machine Learning.
+We need to add a color channel to the images for feeding them in the Convolutional Neural Network.
+There might also be a need to smoothen the image using Gaussian Blur.
+The class labels also need to be converted to one-hot vectors.
+Also Dividing an Image dataset into test and train images is crucial.
+Train images train data and Test images can be used to check the accuracy of the data.
+Graphical representaion of the train vs test accuracy helps to identify whether their is overfitting in the model.
+In case of overfitting Batch Normalization can be after every "relu" layer to decrease overfitting.
+//******** Gaurang Changes ********//
 
 RGB is a additive color set(used in camera) while CMYK is a subtractive color set(used in printers) why ?
 
