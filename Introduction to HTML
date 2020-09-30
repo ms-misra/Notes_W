@@ -23,3 +23,24 @@ cards = &spades; &hearts; &diams; &clubs;
 <tr> table row 
 <th> table header
 <td> table data
+
+List in HTML are of two types:
+1) Unordered Lists
+   These lists can be made using the <ul> tag.
+   <li> tag is used to add entries to the list
+   Example:
+   <ul>
+      <li>The Philosopher's Stone</li>
+      <li>The Chamber of Secrets</li>
+      <li>The Prisoner of Azkaban</li>
+   </ul>
+   
+2) Ordered Lists
+   These lists can be made using the <ol> tag.
+   Example:
+   <ul>
+      <li>Batman Begins</li>
+      <li>The Dark Knight</li>
+      <li>The Dark Knight Rises</li>
+   </ul>
+    
