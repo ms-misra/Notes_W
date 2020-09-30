@@ -4,6 +4,15 @@ Github does compression on files.
 
 Git clone = downloads the whole project
 Git pull = brings the new changes on the desktop
+Git init = This command is used to start a new repository.
+Git add = This command adds a file to the staging area.
+Git commit = This command records or snapshots the file permanently in the version history.
+Git diff = This command shows the file differences which are not yet staged.
+Git reset = This command unstages the file, but it preserves the file contents.
+Git status = This command lists all the files that have to be committed.
+Git rm = This command deletes the file from your working directory and stages the deletion.
+Git log = This command is used to list the version history for the current branch.
+
 
 zubi.io
 
