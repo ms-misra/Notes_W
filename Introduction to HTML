@@ -44,3 +44,10 @@ List in HTML are of two types:
       <li>The Dark Knight Rises</li>
    </ul>
     
+    
+The four core attributes that can be used on the majority of HTML elements (although not all)
+are:
+->Id
+->Title
+->Class
+->Style
