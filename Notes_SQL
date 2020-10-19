@@ -98,4 +98,25 @@ ON DELETE CASCADE, ON UPDATE CASCADE = we are telling the databases that if ther
 
 To handle many to many relationships in sql , we make a junction table in between and turn the many to many into two (many to one).
 
+
+
+
+
+
+------------------------------------------- ADDED NOTES ----------------------------------------------------
+DML commands are by default auto commit must contain ACID properties  
+atomicity 
+consistency 
+isolation
+durability 
+in order to ensure accuracy,completeness and data integrity 
+
+COMMIT end current transaction by mking all pending data changes permanent 
+SAVEPOINT spname : marks a save point withing the current transaction
+ROLLBACK: ends the cureent by discarding all pending data changes 
+ROLLBACK TO spname: rolls back the current to specified savepoint thereby discarding any changes or savepoints created after the savepoint to which you are rolling back
+
+LOCKING prevents destructive interaction concurrent transactions when accessing shared resources. It is performed automatically and requires no user action. Uses the lowest level of restrictiveness. Locks are held for a duration of a transaction. 
+Explicit locking 
+implicit locking 
 	
