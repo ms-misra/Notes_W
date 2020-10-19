@@ -104,6 +104,16 @@ Five pillars of AWS framework -
 
 
 
+----------------------------- ADDED NOTES -------------------------------------------
+Scaling 
+1) break wordpress installation into tiers
+2) load balance tier -> elastic load balancing .... automatically scale as per need
+3) web app tier -> EC2 autoscaling group .... automatically scale as per need
+4) caching tier -> elasticache for memchached ... cache most commonly used queries
+5) database tier > multi-AZ RDS ... manages patching and backup 
+6) Static content -> Amazon S3 .... offloads static content
+7) Content delivery -> Amazon cloudfront ... reduces latency
+
 
 
 
